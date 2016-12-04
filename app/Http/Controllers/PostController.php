@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
+use Auth;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -14,9 +16,10 @@ class PostController extends Controller
     public function index()
     {
         //
+        $posts = Post::orderBy('id','desc') ->paginate(10);
 
 
-        return view('post.index');
+        return view('posts.index' , compact('posts'));
     }
 
     /**
@@ -26,8 +29,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
-        return view('post.create');
+
+        return view('posts.create');
     }
 
     /**
@@ -50,7 +53,8 @@ class PostController extends Controller
     public function show($id)
     {
         //
-        return view('posts.show');
+        $post = post::findOrFail($id) ;
+        return view('posts.show' , compact('post'));
     }
 
     /**
@@ -62,7 +66,7 @@ class PostController extends Controller
     public function edit($id)
     {
         //
-        return view('post.edit');
+        return view('posts.edit');
     }
 
     /**
