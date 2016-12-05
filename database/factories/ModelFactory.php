@@ -33,8 +33,7 @@ $factory->define(App\Models\Post::class,function (Faker\Generator $faker) {
 $factory->define(App\Models\Event::class,function (Faker\Generator $faker) {
 
     return [
-        'title' => $faker->sentence(8),
-        'content' => $faker-> paragraph(4),
+        'name' => $faker->sentence(8),
         'description' => $faker->paragraphs(4),
         'start' => rand(1,20),
         'end' => rand(1,20),
