@@ -30,3 +30,16 @@ $factory->define(App\Models\Post::class,function (Faker\Generator $faker) {
         'user_id' => rand(1,20),
     ];
 });
+$factory->define(App\Models\Event::class,function (Faker\Generator $faker) {
+
+    return [
+        'title' => $faker->sentence(8),
+        'content' => $faker-> paragraph(4),
+        'description' => $faker->paragraphs(4),
+        'start' => rand(1,20),
+        'end' => rand(1,20),
+        'lieu' => $faker-> words(1),
+        'tarif' => rand(1,50),
+        'user_id' => rand(1,20),
+    ];
+});
