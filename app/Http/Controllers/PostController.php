@@ -52,7 +52,7 @@ class PostController extends Controller
             //Enregistrer le formulaire de création
 
             return redirect()
-                ->route('post.show, $id')
+                ->route('post.index')
                 ->with('success','Votre article est bien upload ');
 
 

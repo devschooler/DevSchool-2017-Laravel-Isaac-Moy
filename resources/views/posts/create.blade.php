@@ -21,7 +21,7 @@
 
 
 
-                        {!! Form:: label('Content' , 'contenu') !!}
+                        {!! Form:: label('content' , 'contenu') !!}
 
                         {!! Form:: textarea('content',  null , [ 'class' => 'form-control',
                         'placeholder' => 'contenu']) !!}
