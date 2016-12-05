@@ -14,7 +14,7 @@
                         {{ $post->content  }}
                         <br>
                         Auteur : {{$post->user->name}}
-                        <strong> Auteur: </strong>
+
 
 
                         <br>
