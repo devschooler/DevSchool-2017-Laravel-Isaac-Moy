@@ -24,3 +24,5 @@ Route::resource('/post', 'PostController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+Route::get('/profile',array('as'=>'profile','before'=>'auth','uses'=>'ProfileController@getProfile'));
