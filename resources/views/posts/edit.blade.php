@@ -17,7 +17,7 @@
 
 
                         {!! Form::model(
-                        $post,
+                        $posts,
                         array(
                         'route' => array( 'post.update', $post->id),
                         'method' => 'PUT')) !!}

@@ -84,8 +84,8 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
-        return view('posts.edit');
+        $post = post::findOrFail($id) ;
+        return view('posts.edit',compact('post'));
     }
 
     /**
@@ -97,6 +97,19 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+        $this->validate($request, [
+            'title' => 'required|min:6',
+            'content' => 'required|min:20'
+
+
+        ],
+            ['title.required' => 'titre requis',
+                'title.min' => 'le titre doit faire au moins 6 caratères',
+                'content.required' => 'contenu requis',
+                'content.min' => 'le contenu doit faire au moins 20 caractères . '
+            ]);
+
         $post = Post::findOrFail($id);
         $input = $request->input();
         $post->fill($input)->save();
@@ -104,8 +117,9 @@ class PostController extends Controller
         return redirect()
             ->route('post.show', $id)
             ->with('sucess','article a bien été mis a jour ');
-    }
 
+
+    }
     /**
      * Remove the specified resource from storage.
      *
