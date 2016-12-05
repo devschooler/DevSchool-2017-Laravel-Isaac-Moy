@@ -40,9 +40,28 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
-    }
+
+        {
+
+
+
+            $post = new Post;
+            $input = $request->input();
+            $input['user_id'] = Auth::user()->id;
+            $post->fill($input)->save();
+            //Enregistrer le formulaire de création
+
+            return redirect()
+                ->route('post.show, $id')
+                ->with('success','Votre article est bien upload ');
+
+
+
+        }
+
+
+
+
 
     /**
      * Display the specified resource.
@@ -78,7 +97,13 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $post = Post::findOrFail($id);
+        $input = $request->input();
+        $post->fill($input)->save();
+
+        return redirect()
+            ->route('post.show', $id)
+            ->with('sucess','article a bien été mis a jour ');
     }
 
     /**
@@ -89,6 +114,11 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $post = Post::findOrFail($id);
+        $post->delete();
+
+        return redirect()
+            ->route('post.index')
+            ->with('success','article a été supprimer');
     }
 }
