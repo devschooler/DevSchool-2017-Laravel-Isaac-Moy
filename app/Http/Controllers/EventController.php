@@ -96,7 +96,7 @@ class EventController extends Controller
 
             return redirect()
                 ->route('event.index')
-                ->with('success','article a bien été mis a jour ');
+                ->with('success','Evenement a bien été mis a jour ');
 
 
         }

@@ -2,7 +2,7 @@
 
 
 @section('content')
-    afficher le formulaire de publication d'article
+
 
     <div class="container">
         <div class="row">
@@ -51,7 +51,7 @@
                         'placeholder' => 'tarif']) !!}
 
 
-                        {!! Form::submit('Publier') !!}
+                        {!! Form::submit('Appliquer les modifications') !!}
                         {!! Form::close() !!}
 
                     </div>

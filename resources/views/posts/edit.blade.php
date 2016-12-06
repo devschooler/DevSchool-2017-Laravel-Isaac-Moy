@@ -13,11 +13,9 @@
                     <div class="panel-heading">edition d'article</div>
                     <div class="panel-body">
 
-                        LAMAS BITCHEZ
-
 
                         {!! Form::model(
-                        $posts,
+                        $post,
                         array(
                         'route' => array( 'post.update', $post->id),
                         'method' => 'PUT')) !!}
@@ -34,7 +32,7 @@
 
                         {!! Form:: textarea('content',  null , [ 'class' => 'form-control',
                         'placeholder' => 'contenu']) !!}
-                        {!! Form::submit('Publier') !!}
+                        {!! Form::submit('Appliquer les modifications ') !!}
                         {!! Form::close() !!}
 
 
