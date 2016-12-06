@@ -73,7 +73,9 @@ class EventController extends Controller
      */
     public function edit($id)
     {
-        //
+
+        $event = event::findOrFail($id) ;
+        return view('events.edit',compact('event'));
     }
 
     /**
@@ -85,7 +87,19 @@ class EventController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        {
+
+
+            $event = Event::findOrFail($id);
+            $input = $request->input();
+            $event->fill($input)->save();
+
+            return redirect()
+                ->route('event.index')
+                ->with('success','article a bien été mis a jour ');
+
+
+        }
     }
 
     /**

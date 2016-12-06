@@ -9,15 +9,7 @@
 
                     <h3><strong> Username : {{Auth::user()->name}}</strong></h3>
 
-               {{--     @foreach($posts as $post)
 
-                        <a href="{{ route('post.show', $post->id ) }}" >
-
-
-
-                            <h5> {{ $post->title  }}</h5></a>
-                    @endforeach
-                    {{ $posts->links()   }}
 --}}
                     <div class="panel-body">
 

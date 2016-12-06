@@ -20,7 +20,7 @@
 
 
                         <br>
-                        Auteur : {{$event->user->name}}
+                        organisateur : {{$event->user->name}}
 
 
 
@@ -30,6 +30,7 @@
 
 
                             <a href="{{ route('event.edit',$event->id) }}" >Modifier</a> <br>
+
                             {!! Form::model(
                                                  $event,
                                                  array(
