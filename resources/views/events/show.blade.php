@@ -11,7 +11,7 @@
                     <div class="panel-heading">{{ $post->title  }}</div>
                     <div class="panel-body">
 
-                        {{ $event->content  }}
+                        {{ $event->description }}
                         <br>
                         Auteur : {{$event->user->name}}
 

@@ -18,8 +18,8 @@
 
 
 
-                                <h2> {{ $event->title  }}</h2></a>
-                            <p> {{ $event->content  }}</p>
+                                 <h2> {{ $event->name  }}</h2>   </a>
+                            <p> {{ $event->description  }}</p>
                         @endforeach
 
                         {{ $events->links()   }}
