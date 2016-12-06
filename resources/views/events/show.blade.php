@@ -2,16 +2,23 @@
 
 
 @section('content')
-    afficher un article
+
 
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">{{ $post->title  }}</div>
+                    <div class="panel-heading">{{ $event->name  }}</div>
                     <div class="panel-body">
 
-                        {{ $event->description }}
+                        description : {{ $event->description }} </br>
+
+                        Date de début {{ $event->start }} </br>
+                        Date de fin {{ $event->end }} </br>
+                        lieu : {{ $event->lieu }} </br>
+                        prix : {{ $event->tarif}} </br>
+
+
                         <br>
                         Auteur : {{$event->user->name}}
 
