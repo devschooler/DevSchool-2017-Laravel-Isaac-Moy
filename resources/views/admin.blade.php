@@ -5,14 +5,10 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Votre Profil</div>
+                    <div class="panel-heading">Administration</div>
 
-                    <h3><strong> Username : {{Auth::user()->name}}</strong></h3>
-
-
---}}
                     <div class="panel-body">
-
+                        You are logged in as an ADMINgit !
                     </div>
                 </div>
             </div>

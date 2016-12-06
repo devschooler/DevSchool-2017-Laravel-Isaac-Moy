@@ -29,3 +29,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 
 Route::get('/profile',array('as'=>'profile','before'=>'auth','uses'=>'ProfileController@getProfile'));
+
+
+
+Route::get('/admin',array('as'=>'admin','before'=>'auth','uses'=>'AdminController@getProfil'));
