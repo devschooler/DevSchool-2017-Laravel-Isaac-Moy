@@ -35,6 +35,11 @@
                         {!! Form:: text('end',  null , [ 'class' => 'form-control',
                         'placeholder' => 'date de fin']) !!}
 
+                        {!! Form:: label('lieu' , 'lieu ') !!}
+
+                        {!! Form:: text('lieu',  null , [ 'class' => 'form-control',
+                        'placeholder' => 'lieu']) !!}
+
                         {!! Form:: label('tarif' , 'tarif ') !!}
 
                         {!! Form:: text('tarif',  null , [ 'class' => 'form-control',
