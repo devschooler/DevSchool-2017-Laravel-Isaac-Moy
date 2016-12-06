@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+
+use App\Models\Event;
+use Auth;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
@@ -13,7 +16,10 @@ class EventController extends Controller
      */
     public function index()
     {
-        //
+        $events = Event::orderBy('id','desc') ->paginate(10);
+
+
+        return view('events.index' , compact('events'));
     }
 
     /**
@@ -23,7 +29,7 @@ class EventController extends Controller
      */
     public function create()
     {
-        //
+        return view('events.create');
     }
 
     /**
@@ -34,7 +40,17 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $event = new Event;
+        $input = $request->input();
+        $input['user_id'] = Auth::user()->id;
+        $event->fill($input)->save();
+        //Enregistrer le formulaire de création
+
+        return redirect()
+            ->route('event.index')
+            ->with('success','Votre évènement est bien upload ');
+
+
     }
 
     /**
@@ -45,7 +61,8 @@ class EventController extends Controller
      */
     public function show($id)
     {
-        //
+        $event = event::findOrFail($id) ;
+        return view('events.show' , compact('event'));
     }
 
     /**
@@ -79,6 +96,11 @@ class EventController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $event = Post::findOrFail($id);
+        $event->delete();
+
+        return redirect()
+            ->route('event.index')
+            ->with('success','évènement a été supprimer');
     }
 }
