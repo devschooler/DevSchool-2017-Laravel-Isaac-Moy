@@ -96,7 +96,7 @@ class EventController extends Controller
      */
     public function destroy($id)
     {
-        $event = Post::findOrFail($id);
+        $event = Event::findOrFail($id);
         $event->delete();
 
         return redirect()

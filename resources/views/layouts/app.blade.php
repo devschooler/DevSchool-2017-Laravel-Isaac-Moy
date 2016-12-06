@@ -56,7 +56,8 @@
                         @else
                             <li><a href="{{ route('post.create') }}"> Créer un article </a> </li>
                             <li> <a href="{{ route('post.index') }}"> voir les articles  </a>  </li>
-                            <li> <a href="{{ route('event.index') }}"> voir les events  </a>  </li>
+                            <li> <a href="{{ route('event.index') }}"> voir les évenement  </a>  </li>
+                            <li> <a href="{{ route('event.create') }}"> créer un évenement  </a>  </li>
 
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
