@@ -25,6 +25,8 @@ Auth::routes();
 
 Route::resource('/event','EventController');
 Auth::routes();
+Route::resource('/admin','AdminController');
+Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
@@ -32,4 +34,4 @@ Route::get('/profile',array('as'=>'profile','before'=>'auth','uses'=>'ProfileCon
 
 
 
-Route::get('/admin',array('as'=>'admin','before'=>'auth','uses'=>'AdminController@getProfil'));
+
