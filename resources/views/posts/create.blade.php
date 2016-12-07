@@ -2,7 +2,7 @@
 
 
 @section('content')
-    afficher le formulaire de publication d'article
+
 
     <div class="container">
         <div class="row">

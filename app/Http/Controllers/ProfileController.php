@@ -1,18 +1,20 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Post;
+
+
+use App\Models\Event;
 
 use Illuminate\Http\Request;
 
+
 class ProfileController extends Controller
 {
-    public function getProfile()
-        {
-            return \View::make('profile');
-        }
 
-    public function profile()
+    public function index()
     {
-        $list = Post::all();return view('posts.index', compact('list'));
+        $posts = Post::all();
+        return view('Profile.profile', compact('posts'));
     }
 }

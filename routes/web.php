@@ -27,10 +27,11 @@ Route::resource('/event','EventController');
 Auth::routes();
 Route::resource('/admin','AdminController');
 Auth::routes();
+Route::resource('/profile','ProfileController');
+Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('/profile',array('as'=>'profile','before'=>'auth','uses'=>'ProfileController@getProfile'));
 
 
 
