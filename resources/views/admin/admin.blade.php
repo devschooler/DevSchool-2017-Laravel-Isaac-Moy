@@ -12,24 +12,34 @@
                     <div class="panel-body">
 
 
-
-
+                         Articles :
                         @foreach($posts as $post)
 
 
 
-
+                            <a href="{{ route('post.show', $post->id ) }}" >
 
                                 <h2> {{ $post->title  }}</h2></a>
                             <p> {{ $post->content  }}</p>
                         @endforeach
+                            Evenements:
+                            {{ $posts->links()   }}
+                            @foreach($events as $event)
 
 
 
+                            <a href="{{ route('event.show', $event->id ) }}" >
+
+                                <h2> {{ $event->name  }}</h2></a>
+                            <p> {{ $post->description  }}</p>
+                        @endforeach
 
 
-                        {{ $posts->links()   }}
-@else  VOUS NETES PAS ADMINISTRATEUR DU SITE
+                            {{ $events->links()   }}
+
+
+
+@else  VOUS N'ÊTES PAS ADMINISTRATEUR DU SITE
 
                         @endif
                     </div>
