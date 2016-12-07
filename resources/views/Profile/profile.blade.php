@@ -33,8 +33,26 @@
                                           @endif
                                             @endforeach
 
-
                                         </div>
+
+                                        <div class="panel-heading"> Voici vos évenements  </div>
+                                        <div class="panel-body">
+
+                                            @foreach($events as $event)
+
+
+                                                @if ($event->user_id ==  Auth::user()->id)
+                                                    <a href="{{ route('event.show', $event->id ) }}" >
+
+
+
+                                                        <h2> {{ $event->name }}</h2></a>
+                                                    <p> {{ $event->description  }}</p>
+                                                @endif
+                                            @endforeach
+                                        </div>
+
+
                                     </div>
                                 </div>
                             </div>

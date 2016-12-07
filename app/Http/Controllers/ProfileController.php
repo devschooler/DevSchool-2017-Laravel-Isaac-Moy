@@ -15,6 +15,7 @@ class ProfileController extends Controller
     public function index()
     {
         $posts = Post::all();
-        return view('Profile.profile', compact('posts'));
+        $events = Event::orderBy('id','desc') ->paginate(5);
+        return view('Profile.profile', compact('posts', 'events'));
     }
 }
